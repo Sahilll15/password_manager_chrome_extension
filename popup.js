@@ -24,10 +24,10 @@ function savePassword(event) {
     var password = document.getElementById('password').value;
 
     // Save the password using Chrome storage API
-    localStorage.getItem('passwords', function (data) {
+    chrome.storage.local.get('passwords', function (data) {
         var passwords = data.passwords || [];
         passwords.push({ username: username, password: password });
-        localStorage.setItem({ passwords: passwords }, function () {
+        chrome.storage.local.set({ passwords: passwords }, function () {
             displayPasswords();
             clearForm();
         });
@@ -37,8 +37,8 @@ function savePassword(event) {
 function displayPasswords() {
     var passwordList = document.getElementById('passwordList');
 
-
-    localStorage.getItem('passwords', function (data) {
+    // Retrieve passwords from Chrome storage API
+    chrome.storage.local.get('passwords', function (data) {
         var passwords = data.passwords || [];
         passwordList.innerHTML = '';
 
@@ -49,8 +49,6 @@ function displayPasswords() {
         }
     });
 }
-
-
 
 
 function clearForm() {
