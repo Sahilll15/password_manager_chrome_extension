@@ -1,4 +1,4 @@
-                                                            My Chrome Password Manager
+                                          My Chrome Password Manager
                                                             
                                         
 ![Screenshot 2023-06-27 at 2 26 40 AM](https://github.com/Sahilll15/password_manager_chrome_extension/assets/109215419/aec17e69-277e-4b8a-a768-d3bdea5aada2)
